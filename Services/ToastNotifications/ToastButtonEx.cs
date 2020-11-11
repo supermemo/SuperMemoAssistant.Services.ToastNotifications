@@ -45,10 +45,12 @@ namespace SuperMemoAssistant.Services.ToastNotifications
     ///   concatenated from <paramref name="arguments" />.
     /// </summary>
     /// <param name="content">The button label</param>
+    /// <param name="activationType"></param>
     /// <param name="arguments">The activation arguments</param>
     /// <returns></returns>
     public static ToastButton Create(
       string                              content,
+      ToastActivationType activationType = ToastActivationType.Background,
       params (string key, string value)[] arguments)
     {
       var queryStr = new QueryString();
@@ -56,7 +58,10 @@ namespace SuperMemoAssistant.Services.ToastNotifications
       foreach (var arg in arguments)
         queryStr.Add(arg.key, arg.value);
 
-      return new ToastButton(content, queryStr.ToString());
+      return new ToastButton(content, queryStr.ToString())
+      {
+        ActivationType = activationType
+      };
     }
 
     #endregion
