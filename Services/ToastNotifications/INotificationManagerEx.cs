@@ -25,17 +25,13 @@
 
 
 
-
-
 // ReSharper disable once CheckNamespace
 namespace SuperMemoAssistant.Services.ToastNotifications
 {
   using Interop.SMA.Notifications;
   using Microsoft.Toolkit.Uwp.Notifications;
 
-  /// <summary>
-  /// Facilitates using Windows Toast Notifications through SMA.
-  /// </summary>
+  /// <summary>Facilitates using Windows Toast Notifications through SMA.</summary>
   public static class INotificationManagerEx
   {
     #region Methods
