@@ -48,7 +48,7 @@ namespace SuperMemoAssistant.Services.ToastNotifications
     /// <param name="notificationText">The main text contained in the notification</param>
     /// <param name="buttons">Optional buttons enabling the user to react</param>
     /// <returns>Whether the notification was shown.</returns>
-    public static bool ShowDesktopNotification(this string notificationText, params ToastButton[] buttons)
+    public static bool ShowDesktopNotification(this string notificationText, params IToastButton[] buttons)
     {
       var toastContent = new ToastContent
       {
@@ -67,7 +67,7 @@ namespace SuperMemoAssistant.Services.ToastNotifications
         }
       };
 
-      if (buttons != null && buttons.Length > 0)
+      if (buttons?.Length > 0)
       {
         var toastActions = new ToastActionsCustom();
 
